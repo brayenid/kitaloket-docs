@@ -1,0 +1,54 @@
+---
+title: Kelola Voucher Event
+description: Panduan membuat dan mengelola kode promo serta potongan harga untuk event Anda.
+---
+
+Menu **Voucher** memungkinkan Anda untuk mengatur strategi diskon guna meningkatkan minat pembeli. Anda dapat mengakses menu ini melalui **Menu Kelola > Voucher**.
+
+## 1. Navigasi Halaman Voucher
+
+Halaman ini terbagi menjadi dua area utama:
+
+- **Formulir Kelola (Sisi Kiri):** Digunakan untuk memasukkan data voucher baru atau mengedit detail voucher yang sudah ada.
+- **Daftar Voucher (Sisi Kanan):** Menampilkan daftar kode promo yang telah dibuat beserta ringkasan nilai potongan dan sisa kuotanya.
+
+---
+
+## 2. Pengisian Formulir Voucher
+
+Gunakan formulir ini untuk menentukan bagaimana diskon akan diterapkan pada transaksi pembeli.
+
+- **Kode Voucher:** String unik yang akan diketikkan pembeli saat checkout (Contoh: `SALE10`).
+- **Nama Internal:** Nama referensi untuk laporan internal Anda agar mudah dibedakan (Contoh: `Promo Spesial Anniversary`).
+- **Tipe Diskon:** Pilih antara **Nominal (Rp)** untuk potongan tetap atau **Persentase (%)**.
+- **Nilai Potongan:** Jumlah nominal atau persentase diskon yang diberikan.
+- **Stok Kuota:** Batas maksimal berapa kali voucher tersebut dapat digunakan di seluruh transaksi.
+- **Kanal:** Menentukan apakah voucher berlaku untuk semua kanal penjualan atau kanal spesifik saja.
+
+---
+
+## 3. Aturan & Validasi Tambahan
+
+Anda dapat mengatur syarat penggunaan voucher agar lebih tertarget:
+
+- **Batasi Kategori:** Jika dicentang, Anda dapat memilih kategori tiket tertentu saja yang boleh menggunakan voucher ini.
+- **Min. Belanja (Rp):** Syarat minimum nominal transaksi agar diskon dapat diterapkan.
+- **Min. Tiket (Qty):** Syarat minimum jumlah tiket yang dibeli dalam satu transaksi.
+- **Masa Berlaku:** Atur tanggal **Berlaku Dari** hingga **Sampai** kapan promo ini aktif secara otomatis.
+
+---
+
+## 4. Manajemen Status
+
+Setelah semua data terisi, Anda memiliki opsi untuk mempublikasikan voucher:
+
+- **Publikasikan Voucher Langsung:** Jika dicentang, voucher akan langsung aktif (selama masuk dalam periode tanggal berlaku).
+- **Tombol Buat/Simpan:** Klik **Buat Voucher** untuk menambahkan baru, atau **Simpan Perubahan** jika Anda sedang dalam mode edit.
+
+---
+
+:::note[Catatan]
+
+- **Beban Voucher:** Diskon yang diberikan melalui voucher akan mengurangi total pemasukan bersih Anda dari penjualan tiket.
+- **Kuota Real-time:** Pengurangan kuota voucher terjadi saat transaksi dinyatakan **Berhasil**. Voucher yang sudah habis tidak akan bisa digunakan lagi oleh pembeli meskipun masa berlakunya masih ada.
+  :::

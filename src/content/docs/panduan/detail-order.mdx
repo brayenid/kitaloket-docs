@@ -1,0 +1,51 @@
+---
+title: Detail Order & Status Pembayaran
+description: Panduan memantau rincian transaksi dan memahami status pembayaran Midtrans di kitaloket.com
+---
+
+Halaman **Detail Order** memberikan visibilitas penuh terhadap sebuah transaksi, mulai dari informasi pembeli hingga riwayat status pembayaran. Anda dapat mengakses halaman ini melalui menu **Orders** lalu mengklik nomor id order yang bersangkutan.
+
+## 1. Informasi Pesanan
+
+Di bagian ini, Anda akan menemukan data fundamental transaksi:
+
+- **Order ID:** ID unik transaksi (contoh: `OID-2025XXXX, POS-2029XXXX`).
+- **Informasi Pembeli:** Nama, Email, dan Nomor Telepon yang dimasukkan saat checkout.
+- **Detail Tiket:** Kategori tiket yang dibeli, jumlah qty, dan nomor kursi (jika ada).
+- **Rincian Harga:** Harga dasar, biaya layanan (platform fee), dan potongan voucher jika digunakan.
+
+---
+
+## 2. Status Pembayaran (Midtrans)
+
+Sebagai bagian dari standar keamanan dan transparansi, kitaloket.com menggunakan status pembayaran resmi dari **Midtrans**. Berikut adalah arti dari setiap status yang muncul:
+
+| Status            | Makna                                                                    | Tindakan Vendor                                       |
+| :---------------- | :----------------------------------------------------------------------- | :---------------------------------------------------- |
+| **Settlement**    | Pembayaran berhasil dan dana telah diterima oleh sistem.                 | Tiket otomatis dikirim ke email pembeli.              |
+| **Pending**       | Pembeli sudah memilih metode pembayaran tetapi belum melakukan transfer. | Menunggu pembayaran (cek batas waktu pembayaran).     |
+| **Expire**        | Pembeli tidak melakukan pembayaran hingga batas waktu yang ditentukan.   | Tiket dikembalikan ke stok (kuota bertambah kembali). |
+| **Deny / Cancel** | Transaksi ditolak oleh penyedia pembayaran atau dibatalkan oleh user.    | Transaksi dianggap gagal.                             |
+| **Refund**        | Dana telah dikembalikan kepada pembeli.                                  | Tiket secara otomatis tidak berlaku (Invalid).        |
+
+---
+
+## 3. Fitur Kelola Transaksi
+
+Pada halaman detail ini, Anda juga dapat melakukan beberapa tindakan administratif:
+
+- **Kirim Ulang Tiket:** Mengirimkan kembali e-tiket ke email pembeli jika mereka merasa belum menerima email.
+- **Update Status Manual:** Hanya digunakan dalam kondisi darurat atau jika ada konfirmasi pembayaran manual (harus dilakukan dengan sangat hati-hati).
+- **Log Aktivitas:** Melihat riwayat perubahan status transaksi dari awal hingga akhir untuk kebutuhan audit.
+
+---
+
+:::caution[Catatan QA: Integritas Status]
+
+- **Real-time Webhook:** Status **Settlement** diperbarui secara otomatis melalui _webhook_ dari Midtrans. Jika terjadi delay, jangan melakukan update status manual sebelum memastikan dana benar-benar masuk di dashboard payment gateway.
+- **Validasi Dana:** Pastikan nominal yang tertera pada _Gross Amount_ di Midtrans sesuai dengan total tagihan pada detail order kitaloket.com.
+  :::
+
+## Tahap Selanjutnya
+
+Setelah memahami detail order, Anda dapat melakukan **[Penarikan Dana (Settlement)](/guides/penarikan-dana)** jika transaksi Anda sudah berstatus Settlement dan acara telah selesai.

@@ -1,0 +1,65 @@
+---
+title: Point of Sales (POS)
+description: Panduan alur penjualan tiket langsung di lokasi acara (on-the-spot).
+---
+
+Menu **POS** memungkinkan staf atau vendor di lapangan untuk melayani pembelian tiket secara manual. Alur ini memastikan data pembeli tetap terekam secara digital dan tiket terkirim secara otomatis.
+
+Akses menu ini melalui **Menu Kelola > POS**.
+
+:::note[Persiapan Sebelum Menggunakan POS]
+
+- Pastikan event terkait telah memiliki kapabilitas untuk penjualan tiket melalui POS. Jika belum, anda dapat menghubungi Kami untuk pengaktifan.
+
+:::
+
+## Alur Transaksi POS
+
+### 1. Pemilihan Kategori Tiket
+
+Langkah pertama adalah memilih jenis tiket yang diinginkan pembeli.
+
+- Pilih kategori tiket yang tersedia (misal: Reguler atau VIP).
+- Masukkan jumlah tiket yang ingin dibeli.
+- Sistem akan menampilkan total harga secara otomatis sebelum melanjutkan ke tahap berikutnya.
+
+### 2. Data Utama Pembeli
+
+Informasi ini **wajib** diisi untuk memastikan pengiriman e-tiket dan validitas data:
+
+- **Nama Lengkap:** Nama yang akan tercetak pada tiket.
+- **Email:** Alamat email aktif untuk pengiriman file PDF e-tiket.
+
+### 3. Pengisian Formulir Tambahan
+
+Jika Anda telah mengaktifkan [Form Tambahan](/panduan/form-tambahan), staf harus menanyakan dan mengisi informasi tersebut (seperti Nomor KTP atau Ukuran Kaos) sesuai dengan instruksi yang muncul di layar.
+
+### 4. Metode Pembayaran
+
+Pilih metode pembayaran yang digunakan oleh pembeli:
+
+- **Tunai (Cash):** Staf menerima uang fisik secara langsung.
+- **Non-Tunai (QRIS/Transfer):** Menggunakan sistem pembayaran digital yang terintegrasi.
+
+### 5. Proses Pembayaran
+
+Mintalah pembeli untuk melakukan pembayaran sesuai nominal yang tertera.
+
+- Jika menggunakan tunai, pastikan uang sudah diterima sebelum menekan tombol konfirmasi.
+- Jika menggunakan QRIS, tunggu hingga status pembayaran dinyatakan **Berhasil** oleh sistem.
+
+### 6. Transaksi Sukses
+
+Setelah pembayaran terverifikasi:
+
+- Sistem akan menampilkan notifikasi **Sukses**.
+- E-tiket akan secara otomatis dikirimkan ke email pembeli.
+- Staf dapat menekan tombol "Transaksi Baru" untuk melayani pembeli berikutnya.
+
+---
+
+:::caution[Catatan: Validasi Lapangan]
+
+- **Akurasi Email:** Kesalahan penulisan email di POS akan berakibat tiket tidak sampai ke tangan pembeli. Selalu lakukan konfirmasi ulang email kepada pembeli sebelum memproses.
+- **Integritas Stok:** Penjualan melalui POS akan mengurangi kuota global di [Kategori Harga](/guides/kategori-harga) secara real-time. Jika stok habis, kategori tersebut akan otomatis tidak dapat dipilih di POS.
+  :::

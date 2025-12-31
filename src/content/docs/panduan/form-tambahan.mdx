@@ -1,0 +1,65 @@
+---
+title: Form Tambahan (Custom Fields)
+description: Panduan membuat formulir kustom untuk mengumpulkan data tambahan dari pembeli tiket.
+---
+
+Menu **Form Tambahan** memungkinkan Anda untuk menambahkan pertanyaan khusus yang wajib diisi oleh pembeli sebelum mereka menyelesaikan transaksi. Anda dapat mengakses menu ini melalui **Menu Kelola > Form Tambahan**.
+
+Ketika anda pertama kali membuat event, secara otomatis akan dibuatkan 4 field standar yaitu:
+
+- Nama Lengkap
+- Nomor Telepon / WhatsApp
+- Tanggal Lahir
+- Jenis Kelamin
+
+---
+
+## 1. Menambahkan Field Baru
+
+Untuk membuat pertanyaan baru, isi formulir di bagian atas halaman:
+
+- **Label**: Masukkan teks pertanyaan yang ingin ditampilkan kepada pembeli.
+- **Key**: Ini adalah identifier unik untuk pertanyaan tersebut. Anda dapat melihat panduan penamaan yang benar dengan mengklik ikon informasi di bawah.
+- **Tipe**: Pilih tipe data yang sesuai. Anda dapat memilih antara:
+  - **Teks Pendek**: Input teks biasa.
+  - **Teks Panjang**: Area teks yang lebih besar untuk jawaban panjang.
+  - **Angka**: Hanya menerima input numerik.
+  - **Tanggal**: Pilihan tanggal menggunakan kalender.
+  - **Email**: Validasi input sebagai alamat email.
+  - **Telepon**: Validasi input sebagai nomor telepon.
+  - **Pilihan (Select)**: Pilihan dari daftar yang Anda buat.
+    - Untuk membuat opsi pilihan, buatkan daftar dengan 1 opsi per baris.
+      Masukkan opsi pilihan di kolom yang muncul setelah memilih tipe ini, pisahkan setiap opsi dengan koma.
+
+---
+
+## 2. Mengelola Daftar Form
+
+Semua pertanyaan yang telah Anda buat akan muncul di tabel bawah.
+
+- **Urutan:** Pertanyaan akan muncul di halaman pembeli sesuai dengan urutan pembuatannya.
+- **Hapus:** Anda dapat menghapus field yang tidak lagi diperlukan dengan mengklik tombol **Hapus**. Namun field tidak boleh kurang dari 1 item.
+
+---
+
+:::danger[Peringatan Keamanan & Privasi]
+Sebagai penyelenggara acara, Anda bertanggung jawab penuh atas data yang dikumpulkan:
+
+1. **Prinsip Minimalis:** Hanya minta data yang benar-benar dibutuhkan untuk operasional acara.
+2. **Data Sensitif:** Hindari meminta data yang sangat sensitif seperti password akun lain atau informasi keuangan pribadi.
+3. **Validasi:** Data yang dikumpulkan melalui form ini akan tersedia di laporan pesanan (Export Report) untuk kebutuhan verifikasi di lapangan.
+   :::
+
+## Implikasi pada Alur Pembeli
+
+Setelah Anda menambahkan form ini, alur di sisi pembeli akan berubah menjadi:
+
+1. Pilih Tiket.
+2. **Isi Form Tambahan** (Data yang Anda buat di sini).
+3. Pembayaran.
+
+---
+
+:::tip[Catatan QA]
+Pastikan Anda melakukan uji coba (_testing_) dengan akun pembeli setelah menambahkan form baru untuk memastikan pertanyaan muncul dengan benar dan tidak menghambat proses _checkout_.
+:::

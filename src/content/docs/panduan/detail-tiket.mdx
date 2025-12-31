@@ -1,0 +1,44 @@
+---
+title: Detail Tiket
+description: Panduan memantau status penggunaan tiket individual dan riwayat aktivasi.
+---
+
+Halaman **Detail Tiket** digunakan untuk meninjau satu tiket secara spesifik. Ini sangat berguna bagi tim Helpdesk atau Staf Lapangan untuk memvalidasi apakah sebuah tiket sudah digunakan atau memerlukan pengecekan status.
+
+Anda dapat mengakses halaman ini dengan mengklik nomor tiket atau ID tiket pada daftar peserta event.
+
+## 1. Informasi Kepemilikan & Status
+
+Di bagian atas, Anda akan melihat ringkasan identitas tiket:
+
+- **ID Tiket:** Kode unik dari tiket (contoh: `TX-12345678`).
+- **Kategori:** Jenis tiket (misal: VIP, Regular, atau Seat A1).
+- **Pemegang Tiket:** Nama pemilik tiket (Belum tentu pembeli).
+- **Pembeli:** Nama orang yang melakukan pembelian tiket.
+- **Status Tiket:** \* **Valid:** Tiket masih aktif dan siap digunakan.
+  - **Dipindai:** Tiket sudah dipindai dan diaktifkan di lokasi.
+  - **Dipindai:** Tiket sudah dipindai dan diaktifkan di lokasi.
+  - **Void/Hangus:** Tiket telah dibatalkan atau ditarik kembali aksesnya.
+
+---
+
+## 2. Riwayat Aktivasi (Log)
+
+Halaman ini menampilkan log aktivitas untuk audit keamanan. Setiap kali tiket diproses, sistem mencatat:
+
+- **Waktu Aktivasi:** Jam dan detik presisi saat tiket pertama kali masuk.
+- **Aktivator:** Nama akun staf yang melakukan scanning atau aktivasi manual.
+- **Metode:** Menunjukkan apakah tiket diproses via _Scanning_ atau _Manual Search_.
+
+Hal ini sangat penting untuk mencegah **Double Entry** (satu tiket digunakan dua kali). Jika ada pengunjung yang mengklaim tiketnya gagal padahal statusnya _Used_, Anda dapat mengecek siapa staf yang mengaktivasinya sebelumnya.
+
+---
+
+## 3. Tindakan
+
+Terdapat beberapa tombol aksi yang dapat dilakukan oleh admin/EO:
+
+- **Kirim ke email:** Mengirim kembali e-tiket ke alamat email pembeli.
+- **Unduh tiket:** Mengunduh tiket dalam format PDF.
+
+---

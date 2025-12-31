@@ -1,0 +1,55 @@
+---
+title: Penarikan Dana (Payout)
+description: Panduan mekanisme pencairan dana hasil penjualan tiket di kitaloket.com.
+---
+
+Penyelesaian keuangan (Settlement) di kitaloket.com dilakukan secara transparan melalui sistem pengajuan mandiri. Anda dapat memantau saldo yang tersedia dan riwayat penarikan pada halaman ini.
+
+## 1. Mekanisme Saldo Tersedia (T+3)
+
+Dana yang muncul di kolom **Saldo Tersedia** untuk ditarik tidak mencakup seluruh total penjualan secara langsung. Dana hanya dapat diajukan apabila:
+
+- Transaksi telah memiliki status **Settled** (Pembayaran Lunas).
+- Telah melewati masa tunggu **T+3** (tiga hari kerja setelah transaksi berhasil).
+
+Masa tunggu ini diperlukan sebagai tindakan pengamanan untuk memastikan tidak ada sengketa transaksi atau permintaan pengembalian dana (_refund_) dari pihak pembeli sebelum dana diteruskan ke Vendor. Hal ini mengikuti kebijakan dari _payment gateway_ yang kami gunakan.
+
+---
+
+## 2. Pengajuan Penarikan
+
+Untuk mencairkan dana, klik tombol **Ajukan Penarikan**. Sebuah formulir permintaan akan muncul yang mengharuskan Anda memverifikasi:
+
+- **Nominal Penarikan:** Jumlah dana yang ingin ditarik (minimal penarikan mengikuti kebijakan yang berlaku).
+- **Rekening Tujuan:** Pastikan data bank sesuai dengan profil Vendor yang telah terverifikasi.
+
+---
+
+## 3. Penyesuaian Potongan (Fee Platform)
+
+Mungkin terdapat perbedaan antara saldo penjualan dan saldo yang diterima. Hal ini terjadi karena mekanisme **Potongan Penjualan Offline**:
+
+Jika Anda melakukan penjualan melalui [POS (Point of Sales)](/panduan/point-of-sales) secara **Tunai (Cash)**, uang tiket sepenuhnya berada di tangan Anda (Vendor). Namun ternyata, di dalam transaksi tersebut terdapat biaya layanan (_Platform Fee_) milik kitaloket.com.
+
+:::note[Informasi Potongan]
+Kitaloket akan mengakumulasi kewajiban _Platform Fee_ dari transaksi tunai Anda dan secara otomatis memotongnya dari saldo digital (transaksi online) saat Anda melakukan pengajuan penarikan dana.
+:::
+
+---
+
+## 4. Status Verifikasi & Validasi
+
+Setelah permintaan diajukan, tim keuangan kitaloket.com akan melakukan proses audit:
+
+1.  **Proses Validasi:** Kami mencocokkan jumlah tiket terjual, data transaksi settled, dan kewajiban fee platform.
+2.  **Permintaan Disetujui (Approved):** Jika valid, dana akan dikirim ke rekening tujuan disertai dengan bukti dukung dan status berubah menjadi **Diterima**.
+3.  **Permintaan Ditolak (Rejected):** Jika ditemukan ketidaksesuaian data, permintaan akan ditolak. Anda akan menerima **Alasan Penolakan** (misal: data rekening tidak valid atau selisih data transaksi).
+4.  **Pengajuan Ulang:** Permintaan yang ditolak dapat diajukan kembali setelah Anda memperbaiki data atau melakukan klarifikasi dengan tim support.
+
+---
+
+:::danger[Catatan Keamanan Keuangan]
+
+- **Integritas Data:** Seluruh proses penarikan terekam dalam sistem audit log kitaloket.com.
+- **Waspada Penipuan:** Kitaloket tidak pernah meminta password atau OTP saat proses transfer dana ke rekening Anda. Segala bentuk komunikasi resmi hanya melalui dashboard ini atau kanal resmi kitaloket.
+  :::

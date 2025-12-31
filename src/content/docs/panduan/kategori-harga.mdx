@@ -1,0 +1,95 @@
+---
+title: Kelola Kategori Harga & Seat
+description: Panduan mengatur harga tiket, kuota stok, denah kursi (seat map), dan monitor penjualan real-time.
+---
+
+Halaman **Kelola Harga** adalah pusat kendali komersial event Anda. Di sini Anda dapat mengatur kategori tiket non-seat maupun tiket dengan nomor kursi (seat). Akses menu ini melalui **Menu Kelola > Kategori Harga**.
+
+## 1. Navigasi Kategori Harga
+
+Halaman ini memiliki dua tab utama untuk manajemen tiket:
+
+- **Daftar Kategori:** Menampilkan semua kategori tiket aktif beserta sisa stok dan jumlah terjual.
+- **Tambah Kategori:** Formulir untuk membuat jenis tiket baru (baik Reguler maupun Seat).
+
+Di bagian header halaman ini, terdapat tautan cepat ke modul penting lainnya:
+
+- **Monitor:** Membuka dashboard pemantauan pergerakan stok secara real-time.
+- **Seats:** Mengarahkan Anda ke halaman desain tata letak kursi.
+
+---
+
+## 2. Menambah Kategori Harga Reguler
+
+Untuk menambahkan kategori tiket reguler (tanpa nomor kursi), isi formulir di tab **Tambah Kategori** dengan data berikut:
+
+- **Detail Tiket:** Masukkan Nama Kategori (misal: VIP), Harga Dasar, dan deskripsi tambahan untuk pembeli.
+- **Konfigurasi:** Atur maksimal pembelian per transaksi (default 5) dan pilih channel penjualan yang diinginkan.
+  - Induk Kategori: Pilih kategori induk jika Anda ingin mengelompokkan beberapa kategori harga di bawah satu payung besar.
+- **Waktu Jual:** Tentukan jadwal penjualan tiket, termasuk tanggal dan waktu mulai serta selesai.
+
+:::note[Catatan]
+
+- Periksa kembali pengaturan waktu jual agar tidak terjadi kesalahan jadwal.
+  :::
+
+---
+
+## 3. Sistem Pengelolaan Stok
+
+Pembaruan kuota tiket di kitaloket.com dilakukan dengan **Operasi (+ atau -)** untuk meminimalkan kesalahan input:
+
+- **Menambah Stok:** Klik ikon stok pada kategori, lalu masukkan angka (misal: `20`) dan pilih tab **tambah** untuk menambah kuota.
+- **Mengurangi Stok:** Masukkan angka (misal: `10`) lalu pilih tab **kurang** untuk mengurangi kuota yang tersedia.
+- **Sinkronisasi:** Perubahan stok akan langsung memengaruhi ketersediaan tiket di halaman publik secara real-time.
+
+---
+
+## 4. Menambah Kategori Seat (Kursi)
+
+Anda dapat mengunjungi halaman pengelolaan tiket kursi dengan cara mengklik tombol **Seats** yang ada di pojok kanan halaman **Kelola Harga**. Saat membuat kategori berbasis kursi, Anda harus mendefinisikan **Canvas Grid** sebagai dasar tata letak.
+
+### Formulir Tambah Kategori Seat:
+
+- **Detail Tiket:** Masukkan Nama Kategori (misal: VVIP), Harga Dasar, dan deskripsi tambahan untuk pembeli.
+- **Aturan Penjualan:** Atur maksimal pembelian per transaksi (default 5) dan pilih channel penjualan yang diinginkan.
+  - Aturan Jarak Kursi: Jika dicentang, sistem akan menerapkan aturan pembelian bahwa tidak boleh meninggalkan kursi kosong di antara kursi yang dibeli kecuali kursi tersebut berada di tepi baris atau di samping kursi yang sudah terisi.
+- **Konfigurasi Seat Map (Canvas):**
+  - **Baris Grid (Rows) & Kolom Grid (Cols):** Anda wajib menentukan dimensi grid sebagai kanvas. Jika Anda mengisi **30 Baris dan 30 Kolom**, maka tersedia maksimal **900 titik kursi** yang bisa Anda susun. Namun bisa lebih sedikit jika anda menerapkan gap atau area kosong.
+  - **Posisi Panggung:** Menentukan orientasi panggung (Atas/Top, Bawah, dll) sebagai panduan visual penonton saat memilih kursi.
+- **Status Publikasi:** Pilih **Publikasikan** agar kategori muncul di sistem atau **Draft** untuk disimpan sementara.
+
+---
+
+### Desain Tata Letak Kursi
+
+- **Buat Tempat Duduk:** Setelah kategori seat dibuat, Anda dapat mendesain tata letak kursi di halaman **Seat Designer**. Gunakan alat yang tersedia untuk menambahkan kursi, menghapus, atau mengatur ulang posisi sesuai kebutuhan acara Anda.
+  - Terdapat 3 kolom utama yaitu Baris yang berisi huruf (A, B, C, dst), Mulai yang berisi angka dari mana kursi dimulai, dan Jumlah yang berisi angka sampai mana kursi dibuat.
+- **Tata Letak**: Anda dapat menggunakan layout bawaan untuk melakukan penataan kursi dengan cepat. Pilih layout yang sesuai, lalu sesuaikan lebih lanjut jika diperlukan.
+- **Desain Canvas:** Gunakan canvas untuk melakukan penyesuaian kursi dengan metode drag-and-drop. Anda dapat menambahkan gap (ruang kosong) untuk menciptakan lorong atau area khusus jika dibutuhkan.
+
+:::note[Catatan]
+
+- Jangan lupa untuk menyimpan desain kursi Anda secara berkala dengan mengklik tombol **Simpan**.
+  :::
+
+---
+
+## 5. Monitor Harga & Stok (Real-time)
+
+Gunakan halaman **Monitor** untuk mengawasi arus transaksi, terutama saat terjadi lonjakan pembelian (_war ticket_).
+
+Metrik yang dipantau meliputi:
+
+- **Total Stok:** Plafon maksimal penjualan yang Anda tetapkan.
+- **Disimpan:** Jumlah tiket yang sedang berada di keranjang belanja pembeli namun belum dibayar.
+- **Terjual:** Jumlah tiket yang sudah lunas dan melewati proses _settlement_.
+- **Sisa:** Sisa kuota bersih yang benar-benar tersedia untuk dibeli oleh orang baru.
+
+---
+
+:::caution[Catatan: Integritas Seat Map]
+
+- **Kapasitas Grid:** Pastikan dimensi grid (Rows x Cols) cukup luas untuk menampung seluruh rencana kursi Anda. Grid yang terlalu kecil akan membatasi jumlah kursi yang bisa dimasukkan di Seat Designer.
+- **Monitoring:** Jika angka pada kolom **Disimpan** sangat tinggi namun **Terjual** rendah, ini menunjukkan banyak pembeli yang menggantung transaksi. Monitor ini membantu Anda memutuskan apakah perlu menambah kuota atau tidak.
+  :::
