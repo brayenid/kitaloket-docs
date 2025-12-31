@@ -26,9 +26,9 @@
     --sl-color-bg: #09090b !important; /* zinc-950 */
     --sl-color-bg-nav: rgba(9, 9, 11, 0.8) !important;
     --sl-color-border: #27272a !important; /* zinc-800 */
-    --sl-color-accent: #3b82f6 !important;
+    --sl-color-accent: #1e859d !important;
     --sl-color-accent-low: #172554 !important;
-    --sl-color-text-accent: #60a5fa !important;
+    --sl-color-text-accent: #1e859d !important;
   }
 }
 
