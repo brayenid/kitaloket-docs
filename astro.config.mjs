@@ -9,6 +9,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Kitaloket Docs',
+      customCss: ['./src/styles/global.css'],
       sidebar: [
         {
           label: 'Dashboard Vendor',
@@ -30,7 +31,7 @@ export default defineConfig({
             { label: 'Voucher/Kode Promo', link: '/panduan/voucher' },
             { label: 'Aktivator', link: '/panduan/aktivator' },
             { label: 'Waiting Room', link: '/panduan/waiting-room' },
-            { label: 'POS', link: '/panduan/point-of-sale' },
+            { label: 'POS', link: '/panduan/point-of-sales' },
             { label: 'Scan Tiket', link: '/panduan/scan-tiket' },
             { label: 'Penarikan Dana', link: '/panduan/penarikan-dana' }
           ]

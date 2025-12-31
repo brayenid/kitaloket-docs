@@ -5,13 +5,98 @@
 @import 'tailwindcss/utilities.css' layer(utilities);
 
 @theme {
-	/*
-	Configure your Tailwind theme that will be used by Starlight.
-	https://starlight.astro.build/guides/css-and-tailwind/#styling-starlight-with-tailwind
-	*/
+  --color-brand-teal: #047481;
+  --font-sans: 'Inter', 'Satoshi', ui-sans-serif, system-ui;
 }
 
-/*
-Add additional Tailwind styles to this file:
-https://tailwindcss.com/docs/adding-custom-styles#using-custom-css
-*/
+@layer base {
+  /* MODE TERANG (Default) */
+  :root {
+    --sl-color-bg: #ffffff !important;
+    --sl-color-bg-nav: rgba(255, 255, 255, 0.8) !important;
+    --sl-color-border: #e5e7eb !important; /* gray-200 */
+    --sl-color-accent: var(--color-brand-teal) !important;
+    --sl-color-accent-low: #eff6ff !important;
+    --sl-color-text-accent: var(--color-brand-teal) !important;
+    --sl-font-system: var(--font-sans) !important;
+  }
+
+  /* MODE GELAP */
+  :root[data-theme='dark'] {
+    --sl-color-bg: #09090b !important; /* zinc-950 */
+    --sl-color-bg-nav: rgba(9, 9, 11, 0.8) !important;
+    --sl-color-border: #27272a !important; /* zinc-800 */
+    --sl-color-accent: #3b82f6 !important;
+    --sl-color-accent-low: #172554 !important;
+    --sl-color-text-accent: #60a5fa !important;
+  }
+}
+
+@layer components {
+  /* Header Glassmorphism */
+  header.header {
+    @apply backdrop-blur-md! border-b! border-(--sl-color-border)!;
+    background-color: var(--sl-color-bg-nav) !important;
+  }
+
+  /* Khusus untuk Title di bagian Hero (Splash Template) */
+  .hero .sl-flex h1 {
+    @apply text-4xl! md:text-5xl! font-black!;
+    /* Efek Gradient modern */
+    background: linear-gradient(to bottom right, var(--sl-color-text-accent), var(--sl-color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+  }
+
+  /* Opsional: Mengubah style Tagline di bawahnya */
+  .hero .sl-flex p {
+    @apply text-zinc-600! dark:text-zinc-400! max-w-[40ch]! text-lg! md:text-xl!;
+  }
+
+  /* Sidebar Styling */
+  .sidebar-pane {
+    @apply border-r! border-(--sl-color-border)!;
+    background-color: var(--sl-color-bg) !important;
+  }
+
+  .sidebar-content a {
+    @apply rounded-lg! mx-2! px-3! py-2! transition-all! border-l-2! border-transparent!;
+  }
+
+  /* Link Aktif: Tanpa background kotak penuh, lebih ke arah minimalis */
+  .sidebar-content a[aria-current='page'] {
+    @apply bg-(--sl-color-accent-low)! text-(--sl-color-text-accent)! border-l-(--sl-color-accent)! font-medium!;
+  }
+
+  /* Card Redesign */
+  .card {
+    @apply rounded-xl! border! border-(--sl-color-border)! shadow-sm! transition-all! hover:shadow-md!;
+    background-color: var(--sl-color-bg) !important;
+  }
+
+  :root[data-theme='dark'] .card {
+    background: linear-gradient(135deg, #09090b 0%, #111113 100%) !important;
+    @apply shadow-none!;
+  }
+
+  /* Kode / Inline Code */
+  code {
+    @apply rounded-md! px-1.5! py-0.5! border! border-(--sl-color-border)! font-medium!;
+    background-color: var(--sl-color-accent-low) !important;
+    color: var(--sl-color-text-accent) !important;
+  }
+
+  /* Hero Button */
+  .action.primary {
+    @apply rounded-full! px-8! py-3! font-semibold! border-none! transition-transform! hover:scale-105!;
+    background-color: var(--sl-color-accent) !important;
+    color: white !important;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-md! bg-white/70! dark:bg-zinc-950/70!;
+  }
+}
