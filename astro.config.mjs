@@ -15,6 +15,7 @@ export default defineConfig({
           label: 'Dashboard Vendor',
           items: [
             { label: 'Memulai (Onboarding)', link: '/panduan/intro' },
+            { label: 'Sebelum Membuat Event', link: '/panduan/pra-event' },
             { label: 'Membuat Event', link: '/panduan/buat-event' },
             { label: 'Statistik Event', link: '/panduan/statistik-event' }
           ]
