@@ -43,6 +43,15 @@ export default defineConfig({
             { label: 'Detail Order', link: '/panduan/detail-order' },
             { label: 'Detail Tiket', link: '/panduan/detail-tiket' }
           ]
+        },
+        {
+          label: 'Pengetahuan Dasar',
+          items: [
+            {
+              label: 'Perubahan Harga',
+              link: '/dasar/perubahan-harga'
+            }
+          ]
         }
       ]
     })

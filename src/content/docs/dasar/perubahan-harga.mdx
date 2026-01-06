@@ -1,0 +1,56 @@
+---
+title: Mekanisme Perubahan Harga
+description: Panduan mengenai dampak perubahan harga tiket terhadap transaksi yang sedang berjalan.
+---
+
+Sebagai Penyelenggara Acara (EO), Anda memiliki fleksibilitas untuk mengubah harga tiket melalui menu [Kategori Harga](/panduan/kategori-harga) kapan saja. Namun, penting untuk memahami bagaimana sistem **kitaloket.com** menangani pembeli yang sedang berada di dalam alur pemesanan (_checkout_) saat perubahan tersebut terjadi.
+
+## 1. Titik Penentu Harga (Price Locking)
+
+Sistem kami menerapkan kebijakan **"Price Locking"** pada tahap pemilihan metode pembayaran. Berikut adalah dua skenario yang akan terjadi:
+
+### Skenario A: Sebelum Memilih Metode Bayar
+
+Jika pembeli sudah memilih tiket seharga **Rp 150.000** dan sedang mengisi formulir data diri, namun di saat yang sama Anda mengubah harga menjadi **Rp 155.000**, maka:
+
+- Saat pembeli menekan tombol "Lanjut" ke halaman pemilihan metode pembayaran, sistem akan **otomatis melakukan validasi ulang**.
+- Harga akan terupdate mengikuti harga terbaru (**Rp 155.000**).
+- Pembeli akan membayar dengan harga yang berlaku paling baru di database.
+
+### Skenario B: Setelah Memilih Metode Bayar (Tagihan Terbit)
+
+Jika pembeli sudah masuk ke halaman pembayaran (di mana instruksi transfer atau QRIS sudah muncul), maka:
+
+- Harga tiket telah dikunci (**Locked**).
+- Perubahan harga apapun yang Anda lakukan di dashboard **tidak akan memengaruhi** nominal tagihan pembeli tersebut.
+- Pembeli tetap membayar harga lama hingga batas waktu pembayaran (_expiry time_) berakhir.
+
+---
+
+## 2. Risiko Perubahan Harga di Tengah Penjualan
+
+Meskipun sistem mendukung perubahan harga secara instan, kami sangat menyarankan untuk **menghindari** perubahan harga saat penjualan sedang berlangsung aktif (_on-sale_).
+
+:::danger[Inkonsistensi Harga & Keluhan]
+Melakukan perubahan harga secara mendadak dapat menyebabkan beberapa risiko operasional:
+
+1. **Inkonsistensi Data:** Dua pembeli yang melakukan transaksi di menit yang sama bisa mendapatkan harga berbeda, yang berpotensi menimbulkan keluhan di media sosial atau _Customer Service_.
+2. **Kebingungan Pembeli:** Pembeli yang melihat harga Rp 150rb di awal namun mendapati harga Rp 155rb saat akan bayar mungkin akan merasa tertipu atau mengalami kegagalan psikologis untuk membeli (_cart abandonment_).
+3. **Rekonsiliasi Keuangan:** Laporan penjualan Anda akan mencatat harga yang bervariasi untuk satu kategori yang sama, sehingga membutuhkan ketelitian ekstra saat proses [Penarikan Dana](/panduan/penarikan-dana).
+   :::
+
+---
+
+## 3. Rekomendasi QA untuk Vendor
+
+Untuk menjaga kredibilitas event dan kenyamanan pembeli, tim QA kami menyarankan:
+
+- **Gunakan Voucher:** Jika ingin menaikkan atau menurunkan harga secara sementara, gunakan fitur [Voucher](/panduan/voucher) daripada mengubah harga dasar.
+- **Informasi Jelas:** Jika harga memang direncanakan naik (seperti sistem _Early Bird_ ke _Presale_), pastikan Anda menggunakan kategori tiket yang berbeda atau memberikan pengumuman waktu kenaikan harga yang jelas.
+- **Cek Status Monitor:** Sebelum mengubah harga, cek [Monitor Penjualan](/panduan/kategori-harga#4-monitor-harga--stok-real-time) untuk memastikan tidak banyak user yang sedang berada dalam proses "Disimpan" atau "Pending".
+
+---
+
+:::tip[Catatan Teknis]
+Sistem kitaloket selalu mengutamakan integritas data pada _Invoice_ yang sudah terbit. Pastikan Anda sudah yakin dengan nominal harga sebelum mempublikasikan kategori tiket.
+:::
